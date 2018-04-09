@@ -70,16 +70,16 @@
 #include_recipe "mongodb"
 
 #uncomment to run the resque recipe
-# include_recipe "resque"
+include_recipe "resque"
 
 #uncomment to run redis.yml recipe
-# include_recipe "redis-yml"
+include_recipe "redis-yml"
 
 #uncomment to run the resque-scheduler recipe
 # include_recipe "resque-scheduler"
 
 #uncomment to run the redis recipe
-#include_recipe "redis"
+include_recipe "redis"
 
 #uncomment to run the env-yaml recipe
 #include_recipe "env-yaml"
@@ -90,7 +90,7 @@
 #include_recipe "logrotate"
 #
 #uncomment to use the solr recipe
-#include_recipe "solr"
+include_recipe "solr"
 
 #include_recipe "varnish_frontend"
 
@@ -166,7 +166,7 @@ if ['solo','db_master', 'db_slave'].include?(node[:instance_role])
   # postgresql9_tablefunc "dbname"
   # postgresql9_test_parser "dbname"
   # postgresql9_unaccent "dbname"
-postgresql9_uuid_ossp "planmyfuel"
+  postgresql9_uuid_ossp "planmyfuel"
 
 
   # 9.1 and 9.2 Extensions
