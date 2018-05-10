@@ -138,6 +138,20 @@ if ('solo' == node[:instance_role])  ||
      user "deploy"
      not_if { FileTest.directory?("/data/solr/server/solr/#{core_name}") }
    end
+
+   template "/data/solr/server/solr/#{core_name}/conf/solrconfig.xml" do
+     source "solrconfig.xml.erb"
+     owner node[:owner_name]
+     group node[:owner_name]
+     mode 0644
+   end
+
+   template "/data/solr/server/solr/#{core_name}/conf/schema.xml" do
+     source "schema.xml.erb"
+     owner node[:owner_name]
+     group node[:owner_name]
+     mode 0644
+   end
 end
 
 # Create the solr configuration files on solo, app and util instances
